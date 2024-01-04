@@ -1,7 +1,7 @@
 .Home {
   display: grid;
   grid-template-rows: 10rem auto 10rem;
-  height: 100%;
+  min-height: 100vh;
   /* background: lightblue; */
 }
 
