@@ -7,13 +7,24 @@ export default function Pagination({
   onNext,
   onPrevious,
 }) {
+  const isFirstPage = pageNumber === 0;
+  const isLastPage = pageNumber === totalPageNumbers;
+
   return (
     <div className="pagination">
-      <button className="previous" onClick={() => onPrevious()}>
+      <button
+        className={`previous ${isFirstPage ? "first-page" : ""}`}
+        disabled={isFirstPage}
+        onClick={() => onPrevious()}
+      >
         <ArrowLeftIcon className="arrow-left-icon" />
         <p>Previous Page</p>
       </button>
-      <button className="next" onClick={() => onNext()}>
+      <button
+        className={`next ${isLastPage ? "last-page" : ""}`}
+        disabled={isLastPage}
+        onClick={() => onNext()}
+      >
         <p>Next Page</p>
         <ArrowRightIcon className="arrow-right-icon" />
       </button>

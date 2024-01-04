@@ -9,6 +9,7 @@ import Pagination from "../components/Pagination/Pagination";
 export default function Home() {
   const [itemsInCart, setItemsInCart] = useState(0);
   const [pokemonList, setPokemonList] = useState();
+  const [totalPokemonCount, setTotalPokemonCount] = useState(0);
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
@@ -36,6 +37,7 @@ export default function Home() {
       const data = await response.json();
 
       setPokemonList(data.results);
+      setTotalPokemonCount(data.count);
     } catch (error) {
       console.log({ Error: error });
     }
@@ -79,7 +81,7 @@ export default function Home() {
             <PokemonList pokemons={pokemons} />
             <Pagination
               pageNumber={pageNumber}
-              totalPageNumbers={Math.round(151 / itemsPerPage)}
+              totalPageNumbers={Math.round(totalPokemonCount / itemsPerPage)}
               onNext={() => setPageNumber(pageNumber + 1)}
               onPrevious={() => setPageNumber(pageNumber - 1)}
             />
