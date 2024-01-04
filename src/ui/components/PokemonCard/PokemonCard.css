@@ -5,6 +5,11 @@
   justify-content: center;
   row-gap: .5rem;
   width: 10rem;
+  cursor: pointer;
+}
+
+.pokemon-card:hover {
+  filter: drop-shadow(0 20px 50px #000000);
 }
 
 .pokemon-card > p {
@@ -16,14 +21,13 @@
   border-radius: 1rem;
   padding: .5rem 1rem;
   border: solid .125rem black;
-  cursor: pointer;
 }
 
 .pokemon-card > p > .plus-circle-icon {
   height: 1.5rem;
 }
 
-.pokemon-card > p:hover > .plus-circle-icon {
+.pokemon-card:hover > p > .plus-circle-icon {
   display: none;
 }
 
@@ -32,7 +36,7 @@
   height: 1.5rem;
 }
 
-.pokemon-card > p:hover > .pokeball-icon {
+.pokemon-card:hover > p > .pokeball-icon {
   display: block;
 }
 
