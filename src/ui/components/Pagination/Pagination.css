@@ -1,0 +1,47 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+  margin: auto 2rem;
+}
+
+.pagination > button {
+  display: flex;
+  column-gap: .5rem;
+  align-items: center;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.pagination > button {
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+  border: solid .125rem transparent;
+}
+
+.pagination > button:hover {
+  border-color: #2874BB;
+  background: #FFCC00;
+  color: #2874BB;
+}
+
+.pagination > button > p {
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.pagination > button > .arrow-left-icon, .arrow-right-icon {
+  height: 2rem;
+}
+
+@media (max-width: 640px) {
+  .pagination > button > p {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .pagination > button > .arrow-left-icon, .arrow-right-icon {
+    height: 1rem;
+  }
+}

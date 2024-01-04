@@ -4,6 +4,7 @@ import Title from "../components/Title/Title";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import PokemonList from "../components/PokemonList/PokemonList";
 import Loading from "../components/Loading/Loading";
+import Pagination from "../components/Pagination/Pagination";
 
 export default function Home() {
   const [itemsInCart, setItemsInCart] = useState(0);
@@ -11,6 +12,7 @@ export default function Home() {
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
+  const itemsPerPage = 18;
 
   async function fetchPokemonData({ url }) {
     try {
@@ -24,7 +26,6 @@ export default function Home() {
   }
 
   async function fetchPokemonList() {
-    const itemsPerPage = 18;
     const offsetAmount = itemsPerPage * pageNumber;
 
     try {
@@ -69,8 +70,24 @@ export default function Home() {
         <Title />
         <ShoppingCart itemsInCart={itemsInCart} />
       </header>
-      <main>{loading ? <Loading /> : <PokemonList pokemons={pokemons} />}</main>
-      <footer></footer>
+      <main>
+        {loading ? (
+          <Loading />
+        ) : (
+          <div className="home-main-content">
+            <PokemonList pokemons={pokemons} />
+            <Pagination
+              pageNumber={pageNumber}
+              totalPageNumbers={Math.round(151 / itemsPerPage)}
+            />
+          </div>
+        )}
+      </main>
+      <footer>
+        <p>
+          Data provided by the PokeApi <a href="https://pokeapi.co/">(link)</a>
+        </p>
+      </footer>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 .Home {
   display: grid;
-  grid-template-rows: 10rem auto 10rem;
+  grid-template-rows: 10rem auto 5rem;
   min-height: 100vh;
   /* background: lightblue; */
 }
@@ -15,8 +15,14 @@ header {
 }
 
 main {
-  margin: 2rem;
+  margin: 0 2rem;
   /* background: lightpink; */
+}
+
+main > .home-main-content {
+height: 100%;
+display: flex;
+flex-direction: column;
 }
 
 footer {
