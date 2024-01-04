@@ -1,3 +1,8 @@
+# Disclaimer
+
+IN PROGRESS
+[PokéApi](https://pokeapi.co/)
+
 # Shopping Cart (Test project)
 
 ## What's the MVP of a shopping cart?
