@@ -1,0 +1,41 @@
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: .5rem;
+  width: 10rem;
+}
+
+.pokemon-card > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+  /* background: lightgray; */
+  border-radius: 1rem;
+  padding: .5rem 1rem;
+  border: solid .125rem black;
+  cursor: pointer;
+}
+
+.pokemon-card > p > .plus-circle-icon {
+  height: 1.5rem;
+}
+
+.pokemon-card > p:hover > .plus-circle-icon {
+  display: none;
+}
+
+.pokemon-card > p > .pokeball-icon {
+  display: none;
+  height: 1.5rem;
+}
+
+.pokemon-card > p:hover > .pokeball-icon {
+  display: block;
+}
+
+.pokemon-card > p > .pokeball-icon > img {
+  height: 100%;
+}

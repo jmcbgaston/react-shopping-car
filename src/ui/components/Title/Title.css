@@ -1,0 +1,17 @@
+.title {
+  display: flex;
+  align-items: center;
+  column-gap: .5rem;
+  font-size: 2rem;
+  height: 4rem;
+}
+
+.title > img {
+  height: inherit;
+}
+
+@media (max-width: 640px) {
+  .title > h1 {
+    display: none;
+  }
+}

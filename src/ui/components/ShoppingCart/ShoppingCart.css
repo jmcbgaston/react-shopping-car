@@ -1,0 +1,9 @@
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  column-gap: .25rem;
+}
+
+.shopping-cart-icon {
+  height: 2rem;
+}

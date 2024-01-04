@@ -1,0 +1,25 @@
+.Home {
+  display: grid;
+  grid-template-rows: 10rem auto 10rem;
+  height: 100%;
+  /* background: lightblue; */
+}
+
+header {  
+  margin: 2rem;
+  /* background: lightgreen; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4rem 0 2rem;
+}
+
+main {
+  margin: 2rem;
+  /* background: lightpink; */
+}
+
+footer {
+  margin: 2rem;
+  /* background: lightsalmon; */
+}

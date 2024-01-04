@@ -1,5 +1,13 @@
 # Shopping Cart (Test project)
 
+## What's the MVP of a shopping cart?
+
+1. You need things to sell
+2. You need to be able to add them to a cart
+3. You need a checkout screen
+
+# --- React Base README ---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
