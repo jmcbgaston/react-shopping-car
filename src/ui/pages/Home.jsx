@@ -29,6 +29,7 @@ export default function Home() {
     const offsetAmount = itemsPerPage * pageNumber;
 
     try {
+      setLoading(true);
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon?limit=${itemsPerPage}&offset=${offsetAmount}`
       );
@@ -42,7 +43,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchPokemonList();
-  }, []);
+  }, [pageNumber]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -79,6 +80,8 @@ export default function Home() {
             <Pagination
               pageNumber={pageNumber}
               totalPageNumbers={Math.round(151 / itemsPerPage)}
+              onNext={() => setPageNumber(pageNumber + 1)}
+              onPrevious={() => setPageNumber(pageNumber - 1)}
             />
           </div>
         )}

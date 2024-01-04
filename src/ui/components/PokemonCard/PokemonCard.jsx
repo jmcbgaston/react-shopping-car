@@ -14,9 +14,9 @@ export default function PokemonCard({
       <p>
         {name[0].toUpperCase() + name.slice(1)}
         <PlusCircleIcon className="plus-circle-icon" />
-        <div className="pokeball-icon">
+        <span className="pokeball-icon">
           <img src={PokeBallIcon} alt="pokeball" />
-        </div>
+        </span>
       </p>
     </div>
   );
