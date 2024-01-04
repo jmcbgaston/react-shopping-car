@@ -1,7 +1,7 @@
 # Disclaimer
 
-IN PROGRESS
-[PokéApi](https://pokeapi.co/)
+- Project is in progress
+- API: [PokéApi](https://pokeapi.co/)
 
 # Shopping Cart (Test project)
 
