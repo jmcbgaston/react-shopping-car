@@ -18,6 +18,10 @@
   border: solid .125rem transparent;
 }
 
+.pagination > button:not(:disabled) > p {
+  color: black
+}
+
 .pagination > button:hover {
   border-color: #2874BB;
   background: #FFCC00;
