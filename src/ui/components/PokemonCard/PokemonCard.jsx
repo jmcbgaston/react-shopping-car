@@ -1,5 +1,5 @@
 import "./PokemonCard.css";
-import { PlusCircleIcon } from "@heroicons/react/24/outline";
+import { MinusCircleIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import PokeBallIcon from "../../assets/pokeball.png";
 
 export default function PokemonCard({
@@ -24,12 +24,15 @@ export default function PokemonCard({
   return (
     <button className="pokemon-card" onClick={() => handleClick(pokemon)}>
       <img src={front_default} alt={`${name}-sprite`} />
-      <p>
+      <p className={isInCart ? "item-in-cart" : "item-not-in-cart"}>
         {name[0].toUpperCase() + name.slice(1)}
         {isInCart ? (
-          <span className="pokeball-icon added-to-cart">
-            <img src={PokeBallIcon} alt="pokeball" />
-          </span>
+          <>
+            <MinusCircleIcon className="minus-circle-icon" />
+            <span className="pokeball-icon added-to-cart">
+              <img src={PokeBallIcon} alt="pokeball" />
+            </span>
+          </>
         ) : (
           <>
             <PlusCircleIcon className="plus-circle-icon" />

@@ -25,27 +25,39 @@
   border: solid .125rem black;
 }
 
-.pokemon-card > p > .plus-circle-icon {
+/* icon base */
+.pokemon-card > p > .plus-circle-icon, .minus-circle-icon, .pokeball-icon {
   height: 1.5rem;
 }
-
-.pokemon-card:hover > p > .plus-circle-icon {
-  display: none;
-}
-
-.pokemon-card > p > .pokeball-icon {
-  display: none;
-  height: 1.5rem;
-}
-
-.pokemon-card > p > .added-to-cart {
-  display: block;
-}
-
-.pokemon-card:hover > p > .pokeball-icon {
-  display: block;
-}
-
-.pokemon-card > p > .pokeball-icon > img {
+.pokemon-card > p > span > img {
   height: 100%;
 }
+
+/* not in cart */
+.pokemon-card > .item-not-in-cart > .added-to-cart {
+  display: block;
+}
+.pokemon-card > .item-not-in-cart > .pokeball-icon {
+  display: none;
+}
+/* not in cart - on hover */
+.pokemon-card:hover > .item-not-in-cart > .plus-circle-icon {
+  display: none;
+}
+.pokemon-card:hover > .item-not-in-cart > .pokeball-icon {
+  display: block;
+}
+
+/* item in cart */
+.pokemon-card > .item-in-cart > .minus-circle-icon {
+  display: none;
+}
+
+/* item in cart - on hover */
+.pokemon-card:hover > .item-in-cart > .minus-circle-icon {
+  display: block;
+}
+.pokemon-card:hover > .item-in-cart > .pokeball-icon {
+  display: none;
+}
+
