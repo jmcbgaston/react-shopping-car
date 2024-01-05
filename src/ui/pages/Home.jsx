@@ -3,7 +3,6 @@ import "./Home.css";
 import Title from "../components/Title/Title";
 import ShoppingCart from "../components/ShoppingCart/ShoppingCart";
 import PokemonList from "../components/PokemonList/PokemonList";
-import Loading from "../components/Loading/Loading";
 import Pagination from "../components/Pagination/Pagination";
 
 export default function Home() {
@@ -95,24 +94,21 @@ export default function Home() {
         <ShoppingCart itemsInCart={itemsInCart.length} />
       </header>
       <main>
-        {loading ? (
-          <Loading />
-        ) : (
-          <div className="home-main-content">
-            <PokemonList
-              pokemons={pokemons}
-              pokemonsInCart={itemsInCart}
-              addToCart={(pokeCard) => addToCart(pokeCard)}
-              removeFromCart={(pokeCard) => removeFromCart(pokeCard)}
-            />
-            <Pagination
-              pageNumber={pageNumber}
-              totalPageNumbers={Math.round(totalPokemonCount / itemsPerPage)}
-              onNext={() => setPageNumber(pageNumber + 1)}
-              onPrevious={() => setPageNumber(pageNumber - 1)}
-            />
-          </div>
-        )}
+        <div className="home-main-content">
+          <PokemonList
+            pokemons={pokemons}
+            pokemonsInCart={itemsInCart}
+            addToCart={(pokeCard) => addToCart(pokeCard)}
+            removeFromCart={(pokeCard) => removeFromCart(pokeCard)}
+            isLoading={loading}
+          />
+          <Pagination
+            pageNumber={pageNumber}
+            totalPageNumbers={Math.round(totalPokemonCount / itemsPerPage)}
+            onNext={() => setPageNumber(pageNumber + 1)}
+            onPrevious={() => setPageNumber(pageNumber - 1)}
+          />
+        </div>
       </main>
       <footer>
         <p>

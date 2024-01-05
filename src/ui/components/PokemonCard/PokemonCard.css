@@ -1,17 +1,45 @@
-.pokemon-card {
+/* Shimmer Source: https://www.codeguage.com/blog/shimmer-effect-html-css */
+@keyframes shimmer {
+  to {
+     background-position-x: 0%
+  }
+}
+
+.pokemon-card, .skeleton-pokemon-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   row-gap: .5rem;
   width: 10rem;
+}
+.pokemon-card {
   cursor: pointer;
   background: transparent;
+  /* background: lightcoral; */
   border: none;
 }
-
 .pokemon-card:hover {
   filter: drop-shadow(0 20px 50px #000000);
+}
+/* Skeleton */
+.skeleton-pokemon-card {
+  /* background: lightgray; */
+  background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+  background-size: 300%;
+  background-position-x: 100%;
+  animation: shimmer 1s infinite linear;
+  height: 9.375rem;
+  border-radius: 1.5rem;
+  row-gap: 1rem;
+}
+
+/* Skeleton */
+.skeleton-pokemon-card > .skeleton-sprite {
+  height: 4rem;
+  width: 4rem;
+  background: lightgray;
+  border-radius: 4rem;
 }
 
 .pokemon-card > p {
@@ -23,6 +51,17 @@
   border-radius: 1rem;
   padding: .5rem 1rem;
   border: solid .125rem black;
+}
+
+/* Skeleton */
+.skeleton-pokemon-card > .skeleton-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8rem;
+  background: lightgray;
+  border-radius: 1rem;
+  height: 2rem;
 }
 
 /* icon base */
@@ -60,4 +99,3 @@
 .pokemon-card:hover > .item-in-cart > .pokeball-icon {
   display: none;
 }
-

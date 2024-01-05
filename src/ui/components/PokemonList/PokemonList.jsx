@@ -6,6 +6,7 @@ export default function PokemonList({
   pokemonsInCart,
   addToCart,
   removeFromCart,
+  isLoading,
 }) {
   return (
     <ul className="pokemon-list">
@@ -18,6 +19,7 @@ export default function PokemonList({
             )}
             addToCart={(pokeCard) => addToCart(pokeCard)}
             removeFromCart={(pokeCard) => removeFromCart(pokeCard)}
+            isLoading={isLoading}
           />
         </li>
       ))}
