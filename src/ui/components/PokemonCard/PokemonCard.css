@@ -6,6 +6,8 @@
   row-gap: .5rem;
   width: 10rem;
   cursor: pointer;
+  background: transparent;
+  border: none;
 }
 
 .pokemon-card:hover {
@@ -34,6 +36,10 @@
 .pokemon-card > p > .pokeball-icon {
   display: none;
   height: 1.5rem;
+}
+
+.pokemon-card > p > .added-to-cart {
+  display: block;
 }
 
 .pokemon-card:hover > p > .pokeball-icon {

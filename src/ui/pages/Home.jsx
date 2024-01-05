@@ -7,12 +7,13 @@ import Loading from "../components/Loading/Loading";
 import Pagination from "../components/Pagination/Pagination";
 
 export default function Home() {
-  const [itemsInCart, setItemsInCart] = useState(0);
+  const [itemsInCart, setItemsInCart] = useState([]);
   const [pokemonList, setPokemonList] = useState();
   const [totalPokemonCount, setTotalPokemonCount] = useState(0);
   const [pokemons, setPokemons] = useState([]);
   const [loading, setLoading] = useState(true);
   const [pageNumber, setPageNumber] = useState(0);
+  // TODO: Consider using data.next & data.previous instead of calculating the offset
   const itemsPerPage = 18;
 
   async function fetchPokemonData({ url }) {
@@ -43,11 +44,26 @@ export default function Home() {
     }
   }
 
+  function addToCart(pokemonCard) {
+    setItemsInCart((prevItemsInCart) => [...prevItemsInCart, pokemonCard]);
+  }
+
+  function removeFromCart(pokemonCard) {
+    let filteredPokemons = itemsInCart.filter(
+      (item) => item.id !== pokemonCard.id
+    );
+    setItemsInCart(filteredPokemons);
+  }
+
+  // Runs when pageNumber changes
   useEffect(() => {
+    console.log({ pageNumberUpdated: pageNumber });
     fetchPokemonList();
   }, [pageNumber]);
 
+  // Runs when we get a new pokemonList
   useEffect(() => {
+    console.log({ pokemonListUpdated: pokemonList });
     const fetchData = async () => {
       if (pokemonList) {
         try {
@@ -67,18 +83,28 @@ export default function Home() {
     fetchData();
   }, [pokemonList]);
 
+  // Runs when we addToCart
+  useEffect(() => {
+    console.log({ itemsInCartUpdated: itemsInCart });
+  }, [itemsInCart]);
+
   return (
     <div className="Home">
       <header>
         <Title />
-        <ShoppingCart itemsInCart={itemsInCart} />
+        <ShoppingCart itemsInCart={itemsInCart.length} />
       </header>
       <main>
         {loading ? (
           <Loading />
         ) : (
           <div className="home-main-content">
-            <PokemonList pokemons={pokemons} />
+            <PokemonList
+              pokemons={pokemons}
+              pokemonsInCart={itemsInCart}
+              addToCart={(pokeCard) => addToCart(pokeCard)}
+              removeFromCart={(pokeCard) => removeFromCart(pokeCard)}
+            />
             <Pagination
               pageNumber={pageNumber}
               totalPageNumbers={Math.round(totalPokemonCount / itemsPerPage)}
