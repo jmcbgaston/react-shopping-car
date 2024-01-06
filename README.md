@@ -1,85 +1,72 @@
-# Disclaimer
+# Pokémon Shopping Cart [(Live Site)](https://pokemon-shopping.vercel.app/)
 
-- Project is in progress
-- API: [PokéApi](https://pokeapi.co/)
+`Javascript` | `React` | `HeroIcons`
 
-# Shopping Cart (Test project)
+This is a personal project to explore React (and soon Next.js) functionality.
 
 ## What's the MVP of a shopping cart?
 
-1. You need things to sell
-2. You need to be able to add them to a cart
-3. You need a checkout screen
+- [x] Have things to sell
+- [x] Add said things to a cart
+- [ ] Purchase items via a checkout screen
 
-# --- React Base README ---
+## Concepts utilized
 
-# Getting Started with Create React App
+- Component level state management
+  - `useState`
+- Data fetching, management, and reactivity
+  - `fetch`
+  - `useEffect`
+- Loading state
+  - shimmer animation
+- Pagination
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Future Development
 
-## Available Scripts
+- `SHOW` view
+- (mock) Checkout
+- Client-side state management
 
-In the project directory, you can run:
+### TODOs (as of 01/04/2024):
 
-### `npm start`
+- Refactor `PokemonCard` html
+  - add-to-cart via the pokeball+plus+minus icon vs not the whole element
+  - clicking `PokemonCard` should toggle the focus of the element without modyfying `itemsInCart`
+  - focus should route to a show view for the `pokemon` object
+  - `PokemonCard` shadow should remain active on view change
+- Move fetch to `PokemonList` for better loading experience
+  - use `Suspense`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Tools to consider for future development
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [`TypeScript`](https://www.typescriptlang.org/docs/) - for typed variables
+  - Why?
+    - readability
+    - code error guarding
+  - Alternative?
+    - n/a
+- [`Next.js`](https://nextjs.org/) - for more development structure and features
+  - Why?
+    - `next/navigation`
+    - folder based routing & file system magic (`layout.jsx`, `loading.jsx`, `error.jsx`)
+    - Vercel integration
+  - Alternative:
+    - `React Router` if the only feature we need is routing
+- [`Tailwind`](https://tailwindcss.com/) - for simplified css
+  - Why?
+    - classless css
+    - consistency
+    - lower bundle size
+  - Alternative?
+    - regular `CSS`
+    - `SASS`
+- [`Elf`](https://ngneat.github.io/elf/) - for client-side state management (when data is needed outside of just prop drilling)
+  - Why?
+    - [Netanel Basal](https://netbasal.com/) made it
+  - Alternative?
+    - n/a
 
-### `npm test`
+## Disclaimer
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Project is `IN PROGRESS`
+- Data provided by [PokéApi](https://pokeapi.co/)
