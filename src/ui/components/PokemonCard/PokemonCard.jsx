@@ -22,6 +22,9 @@ export default function PokemonCard({
     }
   }
 
+  // This doesn't really work because PokemonCard won't load till PokemonList
+  // Need to move skeleton higher
+  // Also, PokemonList needs to be responsible for it's API call
   if (isLoading) {
     return (
       <div className="skeleton-pokemon-card shimmer">
