@@ -56,13 +56,11 @@ export default function Home() {
 
   // Runs when pageNumber changes
   useEffect(() => {
-    console.log({ pageNumberUpdated: pageNumber });
     fetchPokemonList();
   }, [pageNumber]);
 
   // Runs when we get a new pokemonList
   useEffect(() => {
-    console.log({ pokemonListUpdated: pokemonList });
     const fetchData = async () => {
       if (pokemonList) {
         try {
@@ -83,9 +81,7 @@ export default function Home() {
   }, [pokemonList]);
 
   // Runs when we addToCart
-  useEffect(() => {
-    console.log({ itemsInCartUpdated: itemsInCart });
-  }, [itemsInCart]);
+  useEffect(() => {}, [itemsInCart]);
 
   return (
     <div className="Home">
